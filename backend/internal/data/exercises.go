@@ -11,5 +11,8 @@ type Exercise struct {
     MainBodyPart string
     SecondaryBodyParts []string `json:",omitempty"`
     Purpose string // mobility, pain relief etc
+    Language string
+    URL string
+    URLType string
     Version int32
 }
