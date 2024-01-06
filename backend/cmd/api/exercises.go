@@ -10,7 +10,7 @@ import (
     "go.mongodb.org/mongo-driver/bson"
     // "go.mongodb.org/mongo-driver/mongo"
     // "go.mongodb.org/mongo-driver/mongo/options"
-
+    "github.com/julienschmidt/httprouter"
 )
 
 // func (app *application) createExerciseHandler(w http.ResponseWriter, r *http.Request){
@@ -19,8 +19,8 @@ import (
 
 func (app *application) createExerciseHandler(w http.ResponseWriter, r *http.Request){
     var input struct{
-        NameEn string
-        NameRu string
+        NameEN string
+        NameRU string
         MainBodyPart string
         SecondaryBodyParts []string
         Purpose string
@@ -35,15 +35,23 @@ func (app *application) createExerciseHandler(w http.ResponseWriter, r *http.Req
 }
 
 func (app *application) showExerciseHandler(w http.ResponseWriter, r *http.Request){
+    params := httprouter.ParamsFromContext(r.Context())
     exercises := []data.Exercise{}
-    // var input struct{
-    //     Purpose string
-    // }
-    // err := json.NewDecoder(r.Body).Decode(&input)
+   //  var input struct{
+//         Purpose string
+//     }
+//     err := json.NewDecoder(r.Body).Decode(&input)
+//     fmt.Println("Input:")
+//      fmt.Println(input.Purpose)
+// if err != nil {
+//     http.Error(w,"Decode Error", http.StatusInternalServerError)
+//     return
+// }
 
-    coll := app.client.Database("Exercises").Collection("Mobility")
-
-    cursor, err :=  coll.Find(context.TODO(), bson.D{})
+    coll := app.client.Database("Exercises").Collection(params.ByName("purpose"))
+    filter := params.ByName("part")
+    cursor, err :=  coll.Find(context.TODO(), bson.D{{"Part", filter}})
+    fmt.Println(cursor)
     // results := []bson{}
     if err != nil { app.logger.Fatal(err) }
     defer cursor.Close(context.Background())

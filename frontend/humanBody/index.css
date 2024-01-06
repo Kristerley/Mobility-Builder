@@ -1,11 +1,19 @@
 .human-body {
-    width: 207px;
-    position: relative;
-    padding-top: 240px;
-    height: 260px;
     display: inline-block;
+    width: 240px;
+    position: relative;
+    padding-top: 260px;
+    height: 260px;
     margin-left: 10em;
     margin-right: 10em;
+}
+
+.body-wrapper {
+    display: inline-block;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 25px;
+    align-items: center;
+    color: white;
 }
 
 .human-body svg:hover {
@@ -19,82 +27,82 @@
 .human-body svg {
     position: absolute;
     left: 50%;
+    top: 70%;
     fill: #57c9d5;
 }
 
 .human-body svg#head {
     margin-left: -28.5px;
-    top: -6px;
+    top: 16px;
 }
 
 .human-body svg#left-shoulder {
     margin-left: -53.5px;
-    top: 69px;
+    top: 89px;
 }
 
 .human-body svg#right-shoulder {
     margin-left: 13.5px;
-    top: 69px;
+    top: 89px;
 }
 
 .human-body svg#left-arm {
     margin-left: -78px;
-    top: 112px;
+    top: 132px;
 }
 
 .human-body svg#right-arm {
     margin-left: 38px;
-    top: 112px;
+    top: 132px;
     z-index: 10001;
 }
 
 .human-body svg#chest {
     margin-left: -43.5px;
-    top: 88px;
+    top: 108px;
 }
 
 .human-body svg#stomach {
     margin-left: -37.5px;
-    top: 130px;
+    top: 150px;
 }
 
 .human-body svg#left-leg {
     margin-left: -46.5px;
-    top: 205px;
+    top: 225px;
     z-index: 9999;
 }
 
 .human-body svg#right-leg {
     margin-left: 1.5px;
-    top: 205px;
+    top: 225px;
     z-index: 9999;
 }
 
 .human-body svg#left-hand {
     margin-left: -102.5px;
-    top: 224px;
+    top: 244px;
 }
 
 .human-body svg#right-hand {
     margin-left: 66.5px;
-    top: 224px;
+    top: 244px;
     z-index: 10000;
 }
 
 .human-body svg#left-foot {
     margin-left: -35.5px;
-    top: 455px;
+    top: 475px;
 }
 
 .human-body svg#right-foot {
     margin-left: 5.5px;
-    top: 455px;
+    top: 475px;
 }
 
 #area {
-    display: block;
-    width: 100%;
-    clear: both;
+    /* display: block; */
+    /* clear: both; */
     padding: 10px;
     text-align: center;
     font-size: 25px;
@@ -103,5 +111,4 @@
 }
 
 #area #data {
-    color: black;
 }

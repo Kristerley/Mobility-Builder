@@ -3,11 +3,22 @@
 /* } */
 /**/
 body{
+    /* display: inline-grid; */
     margin-top:100px;
+    /* background-color: #121212; */
+    background-color: #1F2024;
+    /* grid-template-columns: 260px 1fr; */
+   }
+.body-wrapper {
+    /* display: grid; */
+    /* grid-template-columns: repeat(2, minmax(200px, 500px)); */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .navBar {
-    background-color: CornflowerBlue;
+    /* background-color: CornflowerBlue; */
+    background-color: rgba(255,255,255,0.1);
     color: white;
     margin-top: 0;
     margin-bottom: 30px;
@@ -18,31 +29,60 @@ body{
 }
 
 .exercise-list {
-    display: inline-block;
+    display: inline-grid;
     vertical-align: top;
-    background-color: silver;
+    background-color: rgba(255,255,255,0.1);
     margin-left: 10px;
     margin-right: 10px;
     overflow: auto;
+    border-radius: 25px;
+    align-items: middle;
 }
 
 .exercises {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    width: 500px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    width: 700px;
     height: 500px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+}
+
+.eTitle {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+.exercise-card {
+    align-items: middle;
+    width: 180px;
+    height: 150px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    /* box-shadow:0 0 5px #ccc; */
+    background-color: rgba(255,255,255,0.1);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-radius: 25px;
+    color: white;
+
+}
+
+.thumbnail {
+    align-self: center;
     margin-left: auto;
     margin-right: auto;
 }
 
-.eTitle {
-    margin-left: 230px;
-    margin-right: 230px;
-}
-
-.exercise-card {
-    padding-left: 10px;
-    padding-right: 10px;
+.exercise-name {
+    margin: auto;
 }
 
 .navLink:link {
@@ -59,4 +99,40 @@ body{
 }
 .navHeader {
     margin-left: 20px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-grid;
+    text-align: center;
+    border-radius: 25px;
+    color: white;
+    float: right;
+    width: 30px;
+    top: 30%;
+    right: 10%;
+}
+
+.purposeButton {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    width: 85px;
+}
+
+.purpose-buttons {
+    display: none;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+}
+
+.purposeButton:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.show {
+    display: block;
 }
